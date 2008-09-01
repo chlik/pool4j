@@ -2,7 +2,6 @@ package org.pool4j;
 
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -31,6 +30,7 @@ public class ResourcePoolTester {
         
         // Add a new entry here for every ResourcePool implementation
         resourcePools.add(new FiniteResourcePool[] {new FiniteResourcePool<Object>(resources)});
+        resourcePools.add(new ScalingResourcePool[] {new ScalingResourcePool<Object>(new IntFactory())});
         
         return resourcePools;
     }
@@ -65,21 +65,6 @@ public class ResourcePoolTester {
     }
     
     @Test
-    public void throwsExceptionWhenRequestOnEmptyPool() {
-        
-        while (!resourcePool.isEmpty()) {
-            resourcePool.getResource();
-        }
-        
-        try {
-            resourcePool.getResource();
-            fail("Expecting a EmptyResourcePoolException to be thrown");
-        } catch (EmptyResourcePoolException e) {
-            // Expected
-        }
-    }
-    
-    @Test
     public void verifyReleasePopulatesPool() {
         while (!resourcePool.isEmpty()) {
             resourcePool.getResource();
@@ -92,4 +77,5 @@ public class ResourcePoolTester {
         
         assertFalse("Expecting the pool to not be empty", resourcePool.isEmpty());
     }
+
 }

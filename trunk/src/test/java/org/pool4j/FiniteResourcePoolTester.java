@@ -1,5 +1,8 @@
 package org.pool4j;
 
+import static org.junit.Assert.fail;
+
+import java.util.Arrays;
 import java.util.Collections;
 
 import org.junit.Test;
@@ -11,6 +14,23 @@ import org.junit.Test;
  * @author Evan Worley
  */
 public class FiniteResourcePoolTester {
+    
+    @Test
+    public void throwsExceptionWhenRequestOnEmptyPool() {
+        final FiniteResourcePool<Integer> resourcePool = 
+            new FiniteResourcePool<Integer>(Arrays.asList(new Integer[] {1,2,3}));
+        
+        while (!resourcePool.isEmpty()) {
+            resourcePool.getResource();
+        }
+        
+        try {
+            resourcePool.getResource();
+            fail("Expecting a EmptyResourcePoolException to be thrown");
+        } catch (EmptyResourcePoolException e) {
+            // Expected
+        }
+    }
     
     @Test(expected = EmptyResourcePoolException.class)
     public void requiresResources() {
