@@ -1,0 +1,5 @@
+#labels mavenrepository
+#Help requested
+
+= Topics =
+   * Getting pool4j into a centralized maven repository
