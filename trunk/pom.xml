@@ -5,7 +5,7 @@
     <groupId>org.pool4j</groupId>
     <artifactId>pool4j</artifactId>
     <packaging>jar</packaging>
-    <version>1.0</version>
+    <version>1.1-SNAPSHOT</version>
 
     <!-- TODO : In maven 2.1 this can be build/sourceEncoding -->
     <properties>
@@ -112,10 +112,9 @@
         <mailingLists>...</mailingLists>
     -->
     <scm>
-        <connection>scm:svn:http://pool4j.googlecode.com/svn/tags/pool4j-1.0</connection>
-        <developerConnection>scm:svn:https://pool4j.googlecode.com/svn/tags/pool4j-1.0</developerConnection>
-        <tag>HEAD</tag>
-        <url>http://pool4j.googlecode.com/svn/tags/pool4j-1.0</url>
+        <connection>scm:svn:http://pool4j.googlecode.com/svn/trunk/</connection>
+        <developerConnection>scm:svn:https://pool4j.googlecode.com/svn/trunk/</developerConnection>
+        <url>http://pool4j.googlecode.com/svn/trunk/</url>
     </scm>
     
 </project>
