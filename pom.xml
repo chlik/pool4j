@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.pool4j</groupId>
+    <artifactId>pool4j</artifactId>
+    <packaging>jar</packaging>
+    <version>1.0-SNAPSHOT</version>
+
+    <!-- Project Info -->
+    <name>pool4j</name>
+    <url>http://code.google.com/p/pool4j/</url> 
+    <inceptionYear>2008</inceptionYear>
+    <licenses>
+        <license>
+            <name>Apache 2</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
+    <developers>
+        <developer>
+            <id>eworley</id>
+            <name>Evan Worley</name>
+            <email>evanworley@gmail.com</email>
+            <roles>
+                <role>developer</role>
+            </roles>
+            <timezone>-8</timezone>
+        </developer>
+    </developers>
+
+    <!-- Project dependencies -->
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.4</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <!-- Build setup -->
+    <build>
+        <plugins>
+            <!-- Used to generate eclipse project and classpath files -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-eclipse-plugin</artifactId>
+                <version>2.5.1</version>
+            </plugin>
+        </plugins>
+    </build>                                     
+
+    <!-- Environment Settings -->
+    <issueManagement>
+        <system>GoogleIssues</system>
+        <url>http://code.google.com/p/pool4j/issues/list</url>
+    </issueManagement>
+    <!--
+        TODO
+        <mailingLists>...</mailingLists>
+    -->
+    <scm>
+        <connection>scm:svn:http://pool4j.googlecode.com/svn/trunk/</connection>
+        <developerConnection>scm:svn:https://pool4j.googlecode.com/svn/trunk/</developerConnection>
+        <tag>HEAD</tag>
+        <url>http://pool4j.googlecode.com/svn/trunk/</url>
+    </scm>
+    
+</project>
